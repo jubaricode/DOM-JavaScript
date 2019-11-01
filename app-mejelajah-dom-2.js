@@ -1,7 +1,7 @@
-let val ;
+let val;
 
 const list = document.querySelector('ul.list-group');
-const listItem = document.querySelector('li.list-group-item:first-child');
+const listItem = document.querySelector('li.list-group-item:first-child'); // Display Elemen Pertama
 
 val = list;
 val = listItem;
