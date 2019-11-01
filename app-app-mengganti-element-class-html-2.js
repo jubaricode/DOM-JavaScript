@@ -47,14 +47,9 @@ button.classList.remove('test'); // Remove class list to button
 val = button;
 
 // Attribute
-val = button.setAttribute('type', 'submit'); // <button class="float-right btn btn-danger btn-sm delete-item" type="submit">x</button>
-val = button.hasAttribute('type');  // Check attribute type true or false
-// val = button;
+val = button.setAttribute('type', 'submit');
+
+val = button;
 
 console.log(val);
-
-
-// END OF Tutorial DOM JavaScript - 11 
-// Cara Mengganti dan Memanipulasi Element Class Attribute HTML
-
 
