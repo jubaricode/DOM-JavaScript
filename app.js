@@ -1,60 +1,23 @@
-// Replace Element
+// document.querySelector('.clear-task').addEventListener('click',
+//     function (e) {
+//         console.log('Hello World');
+//         e.preventDefault(); //  jika ada link  a href="https://google.com" mencegah default behavioe
+//     });
 
-// Create element
-const newHeading = document.createElement('h3');
-// Add id
-newHeading.id = 'task-title';
-// New Text Node
-newHeading.appendChild(document.createTextNode('Task List'));
+document.querySelector('.clear-task').addEventListener('click', onClick);
+function onClick(e) {
+    // console.log('Click');
+    let val;
+    val = e;
 
-// get old element
-const oldHeading = document.getElementById('card-title');
-// get parent
-const cardHeader = document.querySelector('.card-header');
+    // Event Target element
 
-// Replace
-cardHeader.replaceChild(newHeading, oldHeading);
+    // val = e.target;
+    // val = e.target.id; // kosong
+    // val = e.target.className; //btn btn-info clear-task 
+    // val = e.target.classList; // 0-btn 1-btn-info 2-clear-task
 
-// Remove Element
-const lis = document.querySelectorAll('li');
-const list = document.querySelector('ul');
+    // e.target.innerText = 'Hello';
 
-// Remove list item
-lis[0].remove();
-
-// Remove child element
-list.removeChild(lis[1]);
-
-// console.log(newHeading);
-
-// END of Tutorial DOM JavaScript - 10 
-//Cara Mengganti dan Memanipulasi Element Class Attribute HTML Bag 1
-
-
-// CLASS & ATTRIBUTE
-const firstLi = document.querySelector('li:first-child');
-const button = firstLi.children[0];
-
-// console.log(firstLi);
-// console.log(button);
-
-let val;
-// Display className
-val = button.className;
-val = button.classList[1]; // Display urutan class list posisi 2
-button.classList.add('test'); // Add class list to button 
-button.classList.remove('test'); // Remove class list to button 
-val = button;
-
-// Attribute
-val = button.setAttribute('type', 'submit'); // <button class="float-right btn btn-danger btn-sm delete-item" type="submit">x</button>
-val = button.hasAttribute('type');  // Check attribute type true or false
-// val = button;
-
-console.log(val);
-
-
-// END OF Tutorial DOM JavaScript - 11 
-// Cara Mengganti dan Memanipulasi Element Class Attribute HTML
-
-
+    console.log(val);
+};
