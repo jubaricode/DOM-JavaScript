@@ -1,42 +1,33 @@
-// Tutorial DOM JavaScript - 14 Interaksi Keyboard dan Input Events dengan Jav
-const form = document.querySelector('form');
-const taskInput = document.getElementById('input-task');
-const heading = document.querySelector('h5');
-const select = document.querySelector('select');
+//Tutorial DOM JavaScript - 15 Mengenal Konsep Event Bubbling dan Capturing
+// onclick="event.stopPropagation()"  untuk stop event bubbling
+// Event Bubbling dan Event Capturing
+
+// Dipakai untuk Event Delegation
+
+document.querySelector('#card-title').addEventListener('click',
+    function () {
+        console.log('card title');
+    });
 
 
-// form.addEventListener('submit', runEvent);
+document.querySelector('.card-header').addEventListener('click',
+    function () {
+        console.log('card header');
+    });
 
-// Keydown
-// taskInput.addEventListener('keydown', runEvent);
-// Keyup
-// taskInput.addEventListener('keyup', runEvent);
-// // Keypress
-// taskInput.addEventListener('keypress', runEvent);
-// // Cut
-// taskInput.addEventListener('cut', runEvent);
-// // Paste
-// taskInput.addEventListener('paste', runEvent);
 
-// // Focus
-// taskInput.addEventListener('focus', runEvent);
+document.querySelector('.card').addEventListener('click',
+    function () {
+        console.log('card');
+    }, true);
 
-// // Blur
-// taskInput.addEventListener('blur', runEvent);
-// // Input
-// taskInput.addEventListener('input', runEvent);
-// Change
-select.addEventListener('change', runEvent);
 
-function runEvent(e) {
-    console.log(`EVENT TYPE: ${e.type}`);
-    // console.log(e.target.value);
+document.querySelector('.col-md-12').addEventListener('click',
+    function () {
+        console.log('col');
+    }, true);
 
-    // heading.innerText = e.target.value;
-
-    // console.log(taskInput.value);
-
-    // taskInput.value = '';
-
-    // e.preventDefault();
-}
+document.querySelector('.container').addEventListener('click',
+    function () {
+        console.log('container');
+    }, true);
