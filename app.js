@@ -1,36 +1,42 @@
-// Tutorial DOM JavaScript - 13 Interaksi Mouse Events dengan JavaScript
-
-const clearBtn = document.querySelector('.clear-task');
-const card = document.querySelector('.card');
+// Tutorial DOM JavaScript - 14 Interaksi Keyboard dan Input Events dengan Jav
+const form = document.querySelector('form');
+const taskInput = document.getElementById('input-task');
 const heading = document.querySelector('h5');
+const select = document.querySelector('select');
 
-// Click
-// clearBtn.addEventListener('click', runEvent);
 
-// Double Click
-// clearBtn.addEventListener('dblclick', runEvent);
+// form.addEventListener('submit', runEvent);
 
-// Mousedown
-// clearBtn.addEventListener('mousedown', runEvent);
-// Mouseup
-// clearBtn.addEventListener('mouseup', runEvent);
-// Mount enter
-// card.addEventListener('mouseenter', runEvent);
-// // Mount leave
-// card.addEventListener('mouseleave', runEvent);
-// // Mount over
-// card.addEventListener('mouseover', runEvent);
-// // Mount out
-// card.addEventListener('mouseout', runEvent);
+// Keydown
+// taskInput.addEventListener('keydown', runEvent);
+// Keyup
+// taskInput.addEventListener('keyup', runEvent);
+// // Keypress
+// taskInput.addEventListener('keypress', runEvent);
+// // Cut
+// taskInput.addEventListener('cut', runEvent);
+// // Paste
+// taskInput.addEventListener('paste', runEvent);
 
-// Mouse move
-card.addEventListener('mousemove', runEvent);
+// // Focus
+// taskInput.addEventListener('focus', runEvent);
 
-// Event Handler
+// // Blur
+// taskInput.addEventListener('blur', runEvent);
+// // Input
+// taskInput.addEventListener('input', runEvent);
+// Change
+select.addEventListener('change', runEvent);
+
 function runEvent(e) {
     console.log(`EVENT TYPE: ${e.type}`);
+    // console.log(e.target.value);
 
-    heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+    // heading.innerText = e.target.value;
 
-    document.body.style.backgroundColor = `rgb(${e.offsetY},${e.offsetX},50)`;
+    // console.log(taskInput.value);
+
+    // taskInput.value = '';
+
+    // e.preventDefault();
 }
