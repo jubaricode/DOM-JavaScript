@@ -1,23 +1,36 @@
-// document.querySelector('.clear-task').addEventListener('click',
-//     function (e) {
-//         console.log('Hello World');
-//         e.preventDefault(); //  jika ada link  a href="https://google.com" mencegah default behavioe
-//     });
+// Tutorial DOM JavaScript - 13 Interaksi Mouse Events dengan JavaScript
 
-document.querySelector('.clear-task').addEventListener('click', onClick);
-function onClick(e) {
-    // console.log('Click');
-    let val;
-    val = e;
+const clearBtn = document.querySelector('.clear-task');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
 
-    // Event Target element
+// Click
+// clearBtn.addEventListener('click', runEvent);
 
-    // val = e.target;
-    // val = e.target.id; // kosong
-    // val = e.target.className; //btn btn-info clear-task 
-    // val = e.target.classList; // 0-btn 1-btn-info 2-clear-task
+// Double Click
+// clearBtn.addEventListener('dblclick', runEvent);
 
-    // e.target.innerText = 'Hello';
+// Mousedown
+// clearBtn.addEventListener('mousedown', runEvent);
+// Mouseup
+// clearBtn.addEventListener('mouseup', runEvent);
+// Mount enter
+// card.addEventListener('mouseenter', runEvent);
+// // Mount leave
+// card.addEventListener('mouseleave', runEvent);
+// // Mount over
+// card.addEventListener('mouseover', runEvent);
+// // Mount out
+// card.addEventListener('mouseout', runEvent);
 
-    console.log(val);
-};
+// Mouse move
+card.addEventListener('mousemove', runEvent);
+
+// Event Handler
+function runEvent(e) {
+    console.log(`EVENT TYPE: ${e.type}`);
+
+    heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+
+    document.body.style.backgroundColor = `rgb(${e.offsetY},${e.offsetX},50)`;
+}
