@@ -1,33 +1,20 @@
-//Tutorial DOM JavaScript - 15 Mengenal Konsep Event Bubbling dan Capturing
-// onclick="event.stopPropagation()"  untuk stop event bubbling
-// Event Bubbling dan Event Capturing
+//Tutorial DOM JavaScript - 16 Mengenal Konsep Event Delegation
+//https://www.youtube.com/watch?v=3L8Iel1iH4A&list=PL1aMeb5UP_PFwwuiDCeOwHIlsy-Dcwlqf&index=16
+// Event Delegation
 
-// Dipakai untuk Event Delegation
+// const delItem = document.querySelector('.delete-item');
+// delItem.addEventListener('click', deleteItem);
 
-document.querySelector('#card-title').addEventListener('click',
-    function () {
-        console.log('card title');
-    });
+document.body.addEventListener('click', deleteItem);
 
+function deleteItem(e) {
 
-document.querySelector('.card-header').addEventListener('click',
-    function () {
-        console.log('card header');
-    });
+    // if (e.target.className === 'float-right btn btn-danger btn-sm delete-item') {
+    //     console.log('delete item')
+    // }
 
-
-document.querySelector('.card').addEventListener('click',
-    function () {
-        console.log('card');
-    }, true);
-
-
-document.querySelector('.col-md-12').addEventListener('click',
-    function () {
-        console.log('col');
-    }, true);
-
-document.querySelector('.container').addEventListener('click',
-    function () {
-        console.log('container');
-    }, true);
+    if (e.target.classList.contains('delete-item')) {
+        // console.log('delete item')
+        e.target.parentElement.remove();
+    }
+}
